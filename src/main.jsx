@@ -1,11 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
-import { router } from './Router/Router'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { DarkModeContextProvider } from "./context/darkModeContext";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <DarkModeContextProvider>
+      <App />
+    </DarkModeContextProvider>
   </React.StrictMode>,
-)
+  document.getElementById("root")
+);
